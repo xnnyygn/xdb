@@ -1,8 +1,10 @@
 [package]
-name = "xdblauncher"
+name = "xdb_launcher"
 version = "0.1.0"
 authors = ["xnnyygn <xnnyygn@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-xdbexecutor = { path = "../xdbexecutor" }
+xdb_executor = { path = "../xdb_executor" }
+log = "0.4.6"
+env_logger = "0.6.0"

@@ -4,6 +4,8 @@ use std::io::{Read, Write};
 use std::net::{SocketAddr, TcpStream};
 use std::result::Result;
 
+use log::info;
+
 pub struct Session {
     stream: TcpStream,
     addr: SocketAddr,
@@ -23,7 +25,7 @@ impl Session {
     }
 
     pub fn run(&mut self) -> Result<(), io::Error> {
-        println!("accept connection from {}", self.addr);
+        info!("accept connection from {}", self.addr);
         let mut buffer = [0; 512];
         loop {
             self.write(&mut buffer, b"please input a number between 1 and 99\n")?;
