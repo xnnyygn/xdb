@@ -1,6 +1,7 @@
 use std::io;
 use std::net::TcpListener;
 use std::result::Result;
+use std::thread;
 
 use log::info;
 use env_logger;
@@ -10,6 +11,8 @@ use xdb_executor::ThreadPool;
 mod session;
 
 use session::Session;
+
+//use std::sync::atomic::atomic_int;
 
 fn run(addr: &str) -> Result<(), io::Error> {
     let listener = TcpListener::bind(addr)?;
@@ -29,5 +32,8 @@ fn run(addr: &str) -> Result<(), io::Error> {
 
 fn main() {
     env_logger::init();
-    run("127.0.0.1:8080").unwrap();
+//    run("127.0.0.1:8080").unwrap();
+
+    let a: String = "name".into();
+    println!("{:?}", a);
 }
